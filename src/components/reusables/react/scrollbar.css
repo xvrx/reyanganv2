@@ -1,0 +1,28 @@
+
+
+*::-webkit-scrollbar {
+    position: absolute;
+    right: -5em;
+    width: 10px;
+    border-radius: 0px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 0px;
+    position: absolute;
+    right: -50px;
+  }
+   
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+    position: absolute;
+  }
+  
+  *:hover::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.35); 
+    position: absolute;
+    right: -50px;
+  }
+  

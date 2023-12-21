@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<title>Reyangan</title>
+		<meta name="viewport" content="width=device-width" />
+
+%sveltekit.head%
+<style>
+
+@font-face {
+    font-family: 'quantico';
+    src: url('/fonts/QuanticoRegular.ttf');
+}
+@font-face {
+    font-family: 'quanticoBold';
+    src: url('/fonts/Quanticobold.ttf');
+}
+@font-face {
+    font-family: 'quanticoBoldItalic';
+    src: url('/fonts/QuanticoBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'quanticoItalic';
+    src: url('/fonts/QuanticoItalic.ttf');
+}
+
+:root {
+    /* Light colors */
+  --primary-color: #ff7343; /* Base color */
+  --primary_color_1: #828c8d; /* Base color */
+  --primary_color_2: #ffe1a9; 
+  --secondary-color-orange : #ffdecb;
+  --secondary-color-grey : #c4c4c4;
+  --secondary-color-grey-menu : #a9a9c0;
+  --secondary-color : #eaf1f5;
+  --table-header : #eaf1f5;
+  --tertiary-color : #212c5f;
+  --grey-dark : #2f3641;
+  --grey-not-so-dark : #8397a5;
+  --blue-semi : #4880da;
+  --blue-active : #004abf;
+  --green-active : #138b04;
+  --red-active : #bf0000;
+  --red-active-2 : #4668ffef;
+  --light-red: #fccaca;
+  --blue-active2 : #4751d8;
+  --white : #ffffffef;
+  --light-blue: #d1ebff;
+  --light-green: #cdfcca;
+  --light-purple: #5e398f;
+  --moderate-grey: #c7d1db;
+  --light-pink: #f794b0;
+  --light-orange: #ffc77e;
+  --dark-orange: #c28a41;
+  --light-gray: #c1d1e6;
+  --form-background: #dadfe9;
+
+  /* Darker colors */
+}
+
+html {
+	margin: 0px;
+	padding: 0px;
+	height: 100vh;
+    overflow: hidden;
+}
+
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	-ms-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+
+
+
+*::-webkit-scrollbar {
+    position: absolute;
+    right: -5em;
+    width: 7px;
+    border-radius: 0px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 0px;
+    position: absolute;
+    right: -50px;
+  }
+   
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+    position: absolute;
+  }
+  
+  *:hover::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.35); 
+    position: absolute;
+    right: -50px;
+  }
+
+body {
+	background-color: var(--secondary-color);
+	min-width: 480px;
+	height: 100vh;
+	font-size: 1.2rem;
+	color: var(--font-light);
+	font-family: quantico;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	justify-content: center;
+}
+
+ul {
+	margin: 0;
+	list-style-type: none;
+	text-decoration: none;
+	padding: 0;
+}
+
+.rlv {
+    position: relative;
+}
+
+.abs {
+    position: absolute;
+}
+
+.bold {
+    font-family:"quanticoBold";
+}
+
+.irt {
+    color: inherit;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.align-start{
+    align-items: start;
+}
+.align-end {
+    align-items: end;
+}
+
+.w-full {
+    width: 100%;
+}
+.w-fit {
+    width: fit-content;
+}
+
+.h-full {
+    height: 100%;
+}
+.w-fit {
+    height: fit-content;
+}
+
+.flex {
+    display: flex;
+}
+.justify-center {
+    justify-content: center;
+}
+
+.flex-around {
+    justify-content: space-around;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@keyframes extend{
+    0% { max-height: 0px;}
+    25% { max-height: 300px;}
+    75% { max-height: 800px;}
+    100% { max-height: fit-content;}
+}
+
+@keyframes shrink {
+    0% { max-height: fit-content;}
+    25% { max-height:500px;}
+    75% { max-height: 200px;}
+    100% { max-height: 0px;}
+}
+
+/* @media only screen and (max-width: 1200px) { */
+/* @media only screen and (max-width: 720px) { */
+
+    /* background: rgb(255,255,255); */
+    /* background: linear-gradient(90deg, rgba(255,255,255,1) 0%, var(--grey-not-so-dark) 32%, var(--grey-not-so-dark) 55%, rgba(255,255,255,1) 100%); */
+
+			
+/* ========================================== */
+</style>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
