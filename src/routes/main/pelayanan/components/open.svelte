@@ -188,9 +188,6 @@
                             <MdPlaylistAdd />
                         </svelte:fragment>
                     </Button>
-                        <!-- <button>
-                            +
-                        </button> -->
                     </div>
                     <div class="button-xls-wrapper flex justify-center align-center">
                     <Button 
@@ -246,9 +243,10 @@
         </div>
         <div class="data-list-wrapper">
             <div class="data-list-inner-wrapper">
-                {#if $mainData.length > 0}
+
+                {#if $mainData.length > 0} 
                     {#each $mainData as dataList, idx}
-                        <DataBar dataList={dataList} idx={idx}/>
+                    <DataBar dataList={dataList} idx={idx}/>
                     {/each}
                 {:else}
                 <div class="no-data-found flex w-full justify-center align-center">No Data Found!</div>
@@ -606,30 +604,35 @@
 }
 
 .pelayanan-data-lists{
-    height: 100%;
-    min-height: 100%;
-    max-height: 100%;
-
+ padding-top: 5px;
+ flex-grow: 1;
+ overflow: clip;
 }
 
-.data-list-inner-wrapper{
-    width: 100%;
+
+.pelayanan-secondary-tabs{
+    height: 47px;
 }
 
 .data-list-wrapper{
     width: calc(100% + 0.45rem);
-    height: 100%;
+    flex-grow: 1;
     overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 100%;
+    /* overflow-x: hidden; */
     display: flex;
     flex-direction: column;
 }
 
+.data-list-inner-wrapper{
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto;
+}
+
+
 .table-headers {
     width: 100%;
-    min-height: 10%;
-    margin-top: 0.5em;
+    min-height: 10px ;
     display: grid;
     grid-template-columns: 6% 15% 18% 21% 23% 15%;
     gap: 3px;
@@ -671,7 +674,8 @@
 
 
 .inner-opts-container{
-    max-height: 32px;
+    /* max-height: 40px; */
+    padding-top: 5px;
 }
 
 

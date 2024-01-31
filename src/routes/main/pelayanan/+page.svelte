@@ -106,18 +106,21 @@ let { url, selectObjects } = data
                 </div>
             </div>
         </div>
-
-        {#if $mainMenu === 0 }
-            <div class="pelayanan-data-container" out:fly={{ x: -200, duration: 300}}>
-                <Lazy condition={$info_queue} component={() => import("./components/queue.svelte")} /></div>
-        {:else if $mainMenu === 1}
-            <div class="pelayanan-data-container" out:fly={{ x: $mainMenu === 0 ? 200 : -200, duration: 300}}>
-                <Lazy condition={$info_open}  data={data} component={() => import("./components/open.svelte")} /></div>
-        {:else}
-            <div class="pelayanan-data-container" out:fly={{ x: 200, duration: 300}}>
-                <Lazy condition={$info_resolved} data={data} component={() => import("./components/resolved.svelte")} />
-            </div>
-        {/if}
+        <div class="pelayanan-main-content">
+            {#if $mainMenu === 0 }
+                <div class="pelayanan-data-container" out:fly={{ x: -200, duration: 300}}>
+                    <Lazy condition={$info_queue} component={() => import("./components/queue.svelte")} />
+                </div>
+            {:else if $mainMenu === 1}
+                <div class="pelayanan-data-container" out:fly={{ x: $mainMenu === 0 ? 200 : -200, duration: 300}}>
+                    <Lazy condition={$info_open}  data={data} component={() => import("./components/open.svelte")} />
+                </div>
+            {:else}
+                <div class="pelayanan-data-container" out:fly={{ x: 200, duration: 300}}>
+                    <Lazy condition={$info_resolved} data={data} component={() => import("./components/resolved.svelte")} />
+                </div>
+            {/if}
+        </div>
     </div>
 </div>
 
@@ -133,15 +136,19 @@ let { url, selectObjects } = data
 }
 
 .pelayanan-content-x {
-    height: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 9;
+    overflow: clip;
 }
 
 .pelayanan-data-container {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
-    min-height: 94.5%;
-    max-height: 94.5%;
+    overflow: clip;
 }
+
 
 .data-list-inner-wrapper{
     width: 100%;
@@ -154,11 +161,12 @@ let { url, selectObjects } = data
     width: calc(100% + 0.45rem);
 }
 
-.pelayanan-margin-wrap{
+.pelayanan-margin-wrap {
     border: 10px solid transparent;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex-grow: 1;
+    overflow: clip;
 }
 
 .content-data-lists{
@@ -219,7 +227,7 @@ let { url, selectObjects } = data
 .pelayanan-header{
     color: var(--grey-dark);
     font-size: medium;
-    height: 10%;
+    flex-grow: 1;
 }
 
 
@@ -242,9 +250,21 @@ let { url, selectObjects } = data
 
 
 .pelayanan-main-tabs {
-    height: 5%;
-    margin-bottom: 10px;
     position: relative;
+    /* flex-grow: 1; */
+    min-height: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+.pelayanan-main-content{
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+    flex-grow:1;
 }
 
 .pelayanan-main-tabs::after{

@@ -231,6 +231,8 @@ export let data;
   padding: 1px;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: var(--white);
   border-radius: 10px;
   overflow: hidden;
@@ -405,6 +407,7 @@ export let data;
   width: 7%;
 }
 .main-content-container{
+  display: flex;
   max-width: 93%;
   width: 93%;
   min-width: 80%;
